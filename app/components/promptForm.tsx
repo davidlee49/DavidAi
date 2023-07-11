@@ -11,65 +11,7 @@ const PromptForm = () => {
   //todo: maybe change these useStates to just 1 array and have generatedImage just be the first element
   const [generatedImage, setGeneratedImage] = useState<string>("/woman.png")
   const [prevGeneratedImage, setPrevGeneratedImage] = useState<string[]>([])
-  
 
-    // State to manage form inputs
-    const [formData, setFormData] = useState({
-      enable_hr: false,
-      denoising_strength: 0,
-      firstphase_width: 0,
-      firstphase_height: 0,
-      hr_scale: 2,
-      hr_upscaler: '',
-      hr_second_pass_steps: 0,
-      hr_resize_x: 0,
-      hr_resize_y: 0,
-      hr_sampler_name: '',
-      hr_prompt: '',
-      hr_negative_prompt: '',
-      prompt: '',
-      styles: [''],
-      seed: -1,
-      subseed: -1,
-      subseed_strength: 0,
-      seed_resize_from_h: -1,
-      seed_resize_from_w: -1,
-      sampler_name: '',
-      batch_size: 1,
-      n_iter: 1,
-      steps: 50,
-      cfg_scale: 7,
-      width: 512,
-      height: 512,
-      restore_faces: false,
-      tiling: false,
-      do_not_save_samples: false,
-      do_not_save_grid: false,
-      negative_prompt: '',
-      eta: 0,
-      s_min_uncond: 0,
-      s_churn: 0,
-      s_tmax: 0,
-      s_tmin: 0,
-      s_noise: 1,
-      override_settings: {},
-      override_settings_restore_afterwards: true,
-      script_args: [],
-      sampler_index: 'Euler',
-      script_name: '',
-      send_images: true,
-      save_images: false,
-      alwayson_scripts: {},
-    });
-  
-    // Handler for form input changes
-    const handleInputChange = (e) => {
-      const { name, value } = e.target;
-      setFormData((prevFormData) => ({
-        ...prevFormData,
-        [name]: value,
-      }));
-    };
   
     // Handler for form submission
     const handleSubmit = (e) => {
@@ -135,8 +77,8 @@ const PromptForm = () => {
             </div>
 
             <form className="flex flex-col items-center" onSubmit={handleSubmit}>
-              <input className="w-4/5 h-16 bg-gray-300 px-4 border-b-2 placeholder-gray-800 border-gray-600 focus:border-transparent" placeholder='Enter prompt here...' type="text" name="hr_upscaler" value={formData.hr_upscaler} onChange={handleInputChange} />
-              <input className="w-4/5 h-16 bg-gray-300 px-4 border-b-2 placeholder-gray-800 border-gray-600 focus:border-transparent" placeholder='Enter negative prompts here...' type="text" name="hr_upscaler" value={formData.hr_upscaler} onChange={handleInputChange} />
+              <input className="w-4/5 h-16 bg-gray-300 px-4 border-b-2 placeholder-gray-800 border-gray-600 focus:border-transparent" placeholder='Enter prompt here...' type="text" name="hr_upscaler"  />
+              <input className="w-4/5 h-16 bg-gray-300 px-4 border-b-2 placeholder-gray-800 border-gray-600 focus:border-transparent" placeholder='Enter negative prompts here...' type="text" name="hr_upscaler" />
               <button type="submit" className="mt-4 px-4 border-b-2 border-gray-600 text-gray-800">Submit</button>
             </form>
 
@@ -153,19 +95,6 @@ const PromptForm = () => {
         </div>
       
         
-
-        <div>
-          
-          <div className='justify between'>
-            <div className='w-1/2 flex justify-center items-center'>
-              
-            </div>
-          </div>
-        </div>
-
-        
-
-      
 
       
     </>
